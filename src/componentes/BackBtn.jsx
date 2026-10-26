@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FlipContext } from "../context/flipContext";
+import { FlipContext } from "../context/FlipContext.jsx";
 
 function BackBtn(props) {
 

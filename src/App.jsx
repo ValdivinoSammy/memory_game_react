@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FlipContext } from "./context/flipContext.jsx";
+import { FlipContext } from "./context/FlipContext.jsx";
 import Start from "./componentes/Start.jsx";
 import GridGame from "./componentes/GridGame.jsx";
 import WinScream from "./componentes/WinScream";

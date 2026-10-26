@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FlipContext } from "../context/flipContext.jsx";
+import { FlipContext } from "../context/FlipContext.jsx";
 import jogo from "../jogo";
 import Card from "./Card";
 
