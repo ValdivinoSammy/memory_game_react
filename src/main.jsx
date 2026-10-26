@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { FlipProvider } from './context/flipContext.jsx'
+import { FlipProvider } from './context/FlipContext.jsx'
 import './index.css'
 import App from './App.jsx'
 
