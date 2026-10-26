@@ -9,10 +9,10 @@ function Card(props) {
     return (
         <div onClick={()=>value.cardFlip(props.card)} className={`${grid} ${props.card.flipped? "flip":""}`} id={props.card.id}>
             <div className="verse">
-                <img alt="verso da carta" className="imageCards" src="../../assets/imagens/verso.png"/>
+                <img alt="verso da carta" className="imageCards" src={`${import.meta.env.BASE_URL}assets/imagens/verso.png`}/>
             </div>
             <div className="front">
-                <img alt="frente da carta" className="frontCard" src={`../${props.card.icon}`} />
+                <img alt="frente da carta" className="frontCard" src={`${import.meta.env.BASE_URL}${props.card.icon}`} />
             </div>
         </div>
     )
