@@ -9,6 +9,10 @@ export function FlipProvider(props) {
     const [btnBack, setBtnBack] = useState(false);
     const [cards, setCards] = useState([]);
     const [cardCriado, setCardCriado] = useState(false);
+    const [modoHard, setModoHard] = useState(false);
+
+    let recordgrid20 = modoHard? "recordgrid20Hard":"recordgrid20";
+    let recordgrid30 = modoHard? "recordgrid30Hard":"recordgrid30";
 
     useEffect(() => {
         if (gridEscolhida) {
@@ -36,33 +40,33 @@ export function FlipProvider(props) {
                         // WinScream
                         setBtnBack(false);
                         if (jogo.tamanhoDaGrid === 20) {
-                            let record = Number(localStorage.getItem("recordgrid20"))
+                            let record = Number(localStorage.getItem(recordgrid20))
                             if (record) {
                                 if (record > jogo.moves) {
-                                    localStorage.setItem("recordgrid20", jogo.moves);
+                                    localStorage.setItem(recordgrid20, jogo.moves);
                                     setWhatCanvaShow("WinScream");
                                     return;
                                 }
                                 setWhatCanvaShow("WinScream");
                                 return;
                             }
-                            localStorage.setItem("recordgrid20", jogo.moves);
+                            localStorage.setItem(recordgrid20, jogo.moves);
                             setWhatCanvaShow("WinScream");
                             return;
                         }
 
                         if (jogo.tamanhoDaGrid === 30) {
-                            let record = Number(localStorage.getItem("recordgrid30"))
+                            let record = Number(localStorage.getItem(recordgrid30))
                             if (record) {
                                 if (record > jogo.moves) {
-                                    localStorage.setItem("recordgrid30", jogo.moves);
+                                    localStorage.setItem(recordgrid30, jogo.moves);
                                     setWhatCanvaShow("WinScream");
                                     return;
                                 }
                                 setWhatCanvaShow("WinScream");
                                 return;
                             }
-                            localStorage.setItem("recordgrid30", jogo.moves);
+                            localStorage.setItem(recordgrid30, jogo.moves);
                             setWhatCanvaShow("WinScream");
                             return;
                         }
@@ -89,7 +93,7 @@ export function FlipProvider(props) {
     }
 
     return (
-        <FlipContext.Provider value={{ cardFlip, restart, cards, setCards, gridEscolhida, setGridEscolhida, whatCanvaShow, setWhatCanvaShow, btnBack, setBtnBack }} >
+        <FlipContext.Provider value={{ cardFlip, restart, cards, setCards, gridEscolhida, setGridEscolhida, whatCanvaShow, setWhatCanvaShow, btnBack, setBtnBack, modoHard, setModoHard }} >
             {props.children}
         </FlipContext.Provider>
     )

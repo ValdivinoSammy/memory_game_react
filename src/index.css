@@ -12,7 +12,9 @@ body {
 
     display: grid;
     place-items: center;
+
     min-height: 100vh;
+    min-height: 100dvh;
     min-width: 100vw;
 
     font-family: Arial, Helvetica, sans-serif;
@@ -55,13 +57,12 @@ body {
     transform-style: preserve-3d;
     transition: transform 600ms;
 
-    
+
 }
 
 .flip {
     transform: rotateY(180deg);
 }
-
 
 .cardMenor{
     width: 80px;
@@ -72,11 +73,6 @@ body {
     height: 100px;
 }
 
-.card:hover {
-    background-color: rgba(12, 96, 253, 0.863);
-
-    transition: all 300ms;
-}
 
 .front,
 .verse {
@@ -165,7 +161,6 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    border: 1px solid black;
 
     display: flex;
     flex-direction: column;
@@ -175,8 +170,10 @@ body {
 }
 
 #start h1{
-    font-size: 2.5em;
+    font-size: 2.3em;
     text-align: center;
+
+    margin: 0px 10px;
 }
 
 #start button{
@@ -200,6 +197,74 @@ body {
     cursor: pointer;
 }
 
+.mural-record {
+    position: absolute;
+    top: 10px;
+
+    transform: translateX(-50%);
+    border: 2px solid white;
+    background-color: rgba(51, 51, 51, 0.9);
+    border-radius: 8px;
+
+    padding: 10px 20px;
+
+    height: 150px;
+    min-width: 250px;
+    max-width: 300px;
+
+    z-index: 998;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.mural-record h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.btns-records {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btns-records button {
+    padding: 3px 6px;
+    cursor: pointer;
+
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.all-records {
+    list-style: none;
+    flex: 1;
+
+   justify-content: center;
+   align-self: center;
+}
+
+.all-records li {
+    font-size: 18px;
+}
+
+.sobre-records {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+
+    background-color: #888;
+    border: 2px solid transparent;
+
+    cursor: pointer;
+}
+
+.all-records {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .to-back {
     position: absolute;
     top: 5px;
@@ -207,6 +272,7 @@ body {
 
     padding: 5px 10px;
     font-size: 20px;
+    font-weight: 700;
     color: white;
 
     border-radius: 12px;
@@ -218,8 +284,174 @@ body {
     &:hover {
         background-color:  rgba(47, 115, 243, 0.863);
         border: 2px solid #888;
-        box-shadow: 2px 2px 8px 1px rgba(255, 255, 255, 0.400);
     }
+}
+
+.selected {
+    background-color: #555;
+    color: white;
+}
+
+.explicando {
+    z-index: 999;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+    background-color: rgba(3, 3, 3, 0.925);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    gap: 40px;
+}
+
+.explicando h1 {
+    font-size: 1.8em;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.sobre-div {
+    flex: 1;
+    max-width: 450px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.topic-div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.topic-div h2 {
+    text-align: center;
+}
+
+.topic-div p {
+    line-height: 24px;
+    text-indent: 12px;
+}
+
+.btn-apelido {
+    z-index: 997;
+    position: fixed;
+    bottom: 5%;
+
+    transform: translateX(-50%);
+
+    background-color: rgba(57, 59, 63, 0.863);
+    border-radius: 8px;
+    border: 2px solid rgb(255, 255, 255); 
+
+    padding: 10px 10px;
+    cursor: pointer;
+    
+    transition: all 300ms;
+
+    &:hover{
+        padding: 10px 15px;
+        background-color: rgb(33, 33, 34);
+    }
+}
+
+.btn-modo-hard {
+    z-index: 997;
+    position: fixed;
+    bottom: 15%;
+
+    transform: translateX(-50%);
+
+    background-color: rgba(57, 59, 63, 0.863);
+    border-radius: 8px;
+    border: 2px solid rgb(255, 255, 255); 
+
+    padding: 10px 10px;
+    cursor: pointer;
+
+    transition: all 300ms;
+
+    &:hover{
+        padding: 10px 15px;
+    }
+}
+
+.ON {
+    background-color: rgba(36, 153, 13, 0.863);
+}
+
+.btn-closed-ap {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.btn-saved-ap {
+    background-color: rgba(57, 59, 63, 0.863);
+    border-radius: 8px;
+    border: 2px solid rgb(255, 255, 255); 
+
+    padding: 10px 10px;
+    cursor: pointer;
+    
+    color: white;
+    transition: all 300ms;
+
+    &:hover{
+        padding: 10px 15px;
+        background-color: rgb(33, 33, 34);
+        border-radius: 13px;
+    }
+}
+
+
+#user-name {
+    padding: 5px 10px;
+
+    transition: all 300ms;
+
+    &:focus-visible {
+        padding: 8px 13px;
+        border-radius: 12px;
+    }
+}
+
+.div-alt-apelido {
+    z-index: 999;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+    background-color: rgba(3, 3, 3, 0.925);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
 }
 
 /* responsividade */
@@ -258,8 +490,8 @@ body {
     grid-template-columns: auto auto auto auto;
 }
 .gridTemplate30cards{
-    grid-template-rows: auto auto auto auto auto auto auto auto;
-    grid-template-columns: auto auto auto auto ;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto ;
 }
 .cardMenor{
     width: 70px;
@@ -274,13 +506,17 @@ body {
 
 
 @media screen and (max-width: 374px){
+#container {
+    gap: 8px 15px;
+}
+
 .gridTemplate20cards{
     grid-template-rows: auto auto auto auto auto;
     grid-template-columns: auto auto auto auto;
 }
 .gridTemplate30cards{
-    grid-template-rows: auto auto auto auto auto auto auto auto;
-    grid-template-columns: auto auto auto auto ;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto ;
 }
 
 .cardMenor{

@@ -3,9 +3,11 @@ import { FlipContext } from "../context/FlipContext.jsx";
 import jogo from "../jogo";
 
 function WinScream(props) {
-    const {setWhatCanvaShow , restart} = useContext(FlipContext);
+    const {setWhatCanvaShow , restart, modoHard} = useContext(FlipContext);
+    let recordgrid20 = modoHard? "recordgrid20Hard":"recordgrid20";
+    let recordgrid30 = modoHard? "recordgrid30Hard":"recordgrid30";
     let record;
-    jogo.tamanhoDaGrid === 20? record = localStorage.getItem("recordgrid20"): record = localStorage.getItem("recordgrid30");
+    jogo.tamanhoDaGrid === 20? record = localStorage.getItem(recordgrid20): record = localStorage.getItem(recordgrid30);
 
     return (
         <div className="winDiv">
