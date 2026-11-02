@@ -11,7 +11,7 @@ function Card(props) {
     },[])
 
     const [flip, setFlip] = useState("");
-    setTimeout(()=>{setFlip("")},2000);
+    setTimeout(()=>{setFlip("")},3000);
 
     
 
